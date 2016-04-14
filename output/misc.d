@@ -1,0 +1,13 @@
+..\output\misc.o: ..\arm\STM32F10x_StdPeriph_Driver\src\misc.c
+..\output\misc.o: ..\arm\STM32F10x_StdPeriph_Driver\inc\misc.h
+..\output\misc.o: ..\arm\CM3\stm32f10x.h
+..\output\misc.o: ..\arm\CM3\core_cm3.h
+..\output\misc.o: D:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+..\output\misc.o: ..\arm\CM3\system_stm32f10x.h
+..\output\misc.o: ..\arm\STM32F10x_StdPeriph_Driver\inc\stm32f10x_conf.h
+..\output\misc.o: ..\arm\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h
+..\output\misc.o: ..\arm\CM3\stm32f10x.h
+..\output\misc.o: ..\arm\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h
+..\output\misc.o: ..\arm\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rtc.h
+..\output\misc.o: ..\arm\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h
+..\output\misc.o: ..\arm\STM32F10x_StdPeriph_Driver\inc\misc.h
