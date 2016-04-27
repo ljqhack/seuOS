@@ -1,5 +1,0 @@
--c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\..\seuOS -I..\os -I..\arm\CM3 -I..\arm\STM32F10x_StdPeriph_Driver\inc 
--I D:\Keil\ARM\RV31\INC 
--I D:\Keil\ARM\CMSIS\Include 
--I D:\Keil\ARM\Inc\ST\STM32F10x 
--o "..\output\app.o" --omf_browse "..\output\app.crf" --depend "..\output\app.d" "..\app.c"
