@@ -8,6 +8,7 @@ typedef struct TCB{
     INT32U OSWaitTick;
 }TCB_t;
 
+extern void OSInit(void);
 extern void OSTimeDly(INT32U i);
 extern void OSTaskCreate(void(*task)(void), OS_STK_t *top, INT8U prio);
 

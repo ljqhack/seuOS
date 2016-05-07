@@ -1,15 +1,26 @@
 #include "seuos.h"
 
-static INT32U OSRdyTbl;
-static INT8U OSTaskRunningPrio;
+static INT32U OSTaskTbl;			//if task is created, set relevant bit
+static INT32U OSRdyTbl;				//task ready table
+static INT8U OSTaskRunningPrio;		//runing priority
+static INT8U OSPrioHighRdy;
+static BOOLEAN OSRunning;			//OS runing flag
 
 TCB_t OSTCB[32];
+
+void OSInit(void)
+{
+    OSRunning = FALSE;
+}
 
 void OSTaskCreate(void(*task)(void), OS_STK_t *top, INT8U prio)
 {
     OS_STK *stk;
+	if( ( OSTaskTbl & (0x00000001L<<prio)) ) 
+	{
+		return;						//Task priority has been created, fail
+	}
     stk = top;
-
     *(stk) = (INT32U)0x01000000L;
     *(--stk) = (INT32U)task;
     *(--stk) = (INT32U)0xFFFFFFFFL;
@@ -27,12 +38,21 @@ void OSTaskCreate(void(*task)(void), OS_STK_t *top, INT8U prio)
     *(--stk) = (INT32U)0x04040404L;
     
     OSTCB[prio].OSTaskStackTop = stk;
-    OSRdyTbl |= (0x01)<<prio;
+	OSTaskTbl |= (0x00000001L)<<prio;
+    OSRdyTbl |= (0x00000001)<<prio;
 }
 
-void OSStartTask()
+void OSStartTask(void)
 {
-    OSTaskRunningPrio = 32;
-    
+	if(FALSE == OSRunning)
+	{
+		OSPrioHighRdy = 0;
+		while( !(OSRdyTbl & (0x00000001L)<<OSPrioHighRdy) )
+		{
+			OSPrioHighRdy++;
+		}
+		OSTaskRunningPrio = OSPrioHighRdy;
+		OSStartHighRdy();
+	}
 }
 
