@@ -11,3 +11,14 @@ OSStartHighRdy
 	LDR R1, =NVIC_PENDSVSET
 	STR R1, [R0]
 	CPSIE I
+
+OS_CPU_PendSVHandler
+    CPSID I
+    MRS R0,PSP
+    CBZ R0,OSPendSV_nosave
+
+    SUB R0,R0, #0x20
+    STM R0, {R4-R11}
+    LDR R1, __OS_TCBCur
+    LDR R1, [R1]
+    STR R0, [R1]
