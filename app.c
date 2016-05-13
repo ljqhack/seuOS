@@ -72,6 +72,7 @@ int main(int argc, char *argv[])
     OSTaskCreate(Task2, &Stack[149], 2);
     OSTaskCreate(Task3, &Stack[199], 3);
     OSStart();
-    return 0;
+    return 0;                                  //nerver run to here
 }
+
   
