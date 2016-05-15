@@ -1,3 +1,5 @@
+;After task has been created, call 
+;this function to start OS
 OSStartHighRdy
 	LDR R0, =NVIC_SYSPRI14
 	LDR R1, =NVIC_PENDSV_PRI
@@ -12,7 +14,7 @@ OSStartHighRdy
 	STR R1, [R0]
 	CPSIE I
 
-
+;Context switch,trigger PendSV
 OSCtxSw
     LDR R0, =NVIC_INT_CTRL
     LDR R1, =NVIC_PENDSVSET
@@ -20,6 +22,7 @@ OSCtxSw
     BX LR
 
 
+;PendSV handler
 OS_CPU_PendSVHandler
     CPSID I
     MRS R0,PSP

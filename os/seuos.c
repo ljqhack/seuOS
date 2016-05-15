@@ -13,6 +13,11 @@ void OSInit(void)
     OSRunning = FALSE;
 }
 
+void OSTimeDly(INT32U i)
+{
+	
+}
+
 void OSTaskCreate(void(*task)(void), OS_STK_t *top, INT8U prio)
 {
     OS_STK *stk;
@@ -47,12 +52,26 @@ void OSStartTask(void)
 	if(FALSE == OSRunning)
 	{
 		OSPrioHighRdy = 0;
-		while( !(OSRdyTbl & (0x00000001L)<<OSPrioHighRdy) )
+		while( !(OSRdyTbl & ((0x00000001L)<<OSPrioHighRdy)) )
 		{
 			OSPrioHighRdy++;
 		}
 		OSTaskRunningPrio = OSPrioHighRdy;
 		OSStartHighRdy();
+	}
+}
+
+void OS_Sched(void)
+{
+	OSPrioHighRdy = 0;
+	while( !(OSRdyTbl & ((0x00000001L)<<OSPrioHighRdy)) )
+	{
+		OSPrioHighRdy++;
+	}
+	if(OSPrioHighRdy != OSTaskRunningPrio)
+	{
+		OSTaskRunningPrio = OSPrioHighRdy;
+		OSCtxSw();
 	}
 }
 
