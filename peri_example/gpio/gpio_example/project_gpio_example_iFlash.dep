@@ -1,0 +1,269 @@
+Dependencies for Project 'project_gpio_example', Target 'iFlash': (DO NOT MODIFY !)
+F (.\main_gpio_example.c)(0x57412A8C)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\main_gpio_example.o --omf_browse .\keil_output\main_gpio_example.crf --depend .\keil_output\main_gpio_example.d)
+I (..\..\..\common\board\board.h)(0x56E2960E)
+I (..\..\..\common\chip\chip.h)(0x5707215C)
+I (..\..\..\common\chip\lpc_types.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
+I (..\..\..\common\chip\cmsis.h)(0x56E2960E)
+I (..\..\..\common\CMSIS\core_cm0plus.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmInstr.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\cmsis_armcc.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmFunc.h)(0x56E2960C)
+I (..\..\..\common\chip\syscon_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\clock_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\fmc_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\ioswm_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\../../peri_driver/peri_driver.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/rom/romapi_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/../iap/iap.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/rom/../../common/chip/error_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_i2c_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_pwr_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_uart_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/acmp/acmp_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/adc/adc_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/crc/crc_8xx.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/dma/dma_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/gpio/gpio_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\../../peri_driver/i2c/i2c_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/inmux/inmux_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/mrt/mrt_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/mrt/stopwatch.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/pinint/pinint_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\../../peri_driver/pmu/pmu_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/sctimer/sct_8xx.h)(0x56E29620)
+I (..\..\..\common\chip\../../peri_driver/sctimer/sct_pwm_8xx.h)(0x56E29620)
+I (..\..\..\common\chip\../../peri_driver/spi/spi_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/uart/uart_8xx.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/uart/ring_buffer.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/wkt/wkt_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/wwdt/wwdt_8xx.h)(0x56E2961C)
+I (..\..\..\common\board\board_api.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (..\..\..\os\seuos.h)(0x574131FF)
+I (..\..\..\os\os_def.h)(0x57412955)
+F (..\..\..\peri_driver\gpio\gpio_8xx.c)(0x5707215C)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\gpio_8xx.o --omf_browse .\keil_output\gpio_8xx.crf --depend .\keil_output\gpio_8xx.d)
+I (..\..\..\common\chip\chip.h)(0x5707215C)
+I (..\..\..\common\chip\lpc_types.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
+I (..\..\..\common\chip\cmsis.h)(0x56E2960E)
+I (..\..\..\common\CMSIS\core_cm0plus.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmInstr.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\cmsis_armcc.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmFunc.h)(0x56E2960C)
+I (..\..\..\common\chip\syscon_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\clock_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\fmc_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\ioswm_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\../../peri_driver/peri_driver.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/rom/romapi_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/../iap/iap.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/rom/../../common/chip/error_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_i2c_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_pwr_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_uart_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/acmp/acmp_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/adc/adc_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/crc/crc_8xx.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/dma/dma_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/gpio/gpio_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\../../peri_driver/i2c/i2c_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/inmux/inmux_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/mrt/mrt_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/mrt/stopwatch.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/pinint/pinint_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\../../peri_driver/pmu/pmu_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/sctimer/sct_8xx.h)(0x56E29620)
+I (..\..\..\common\chip\../../peri_driver/sctimer/sct_pwm_8xx.h)(0x56E29620)
+I (..\..\..\common\chip\../../peri_driver/spi/spi_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/uart/uart_8xx.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/uart/ring_buffer.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/wkt/wkt_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/wwdt/wwdt_8xx.h)(0x56E2961C)
+F (..\..\..\peri_driver\uart\uart_8xx.c)(0x56E2961A)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\uart_8xx.o --omf_browse .\keil_output\uart_8xx.crf --depend .\keil_output\uart_8xx.d)
+I (..\..\..\common\chip\chip.h)(0x5707215C)
+I (..\..\..\common\chip\lpc_types.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
+I (..\..\..\common\chip\cmsis.h)(0x56E2960E)
+I (..\..\..\common\CMSIS\core_cm0plus.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmInstr.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\cmsis_armcc.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmFunc.h)(0x56E2960C)
+I (..\..\..\common\chip\syscon_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\clock_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\fmc_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\ioswm_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\../../peri_driver/peri_driver.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/rom/romapi_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/../iap/iap.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/rom/../../common/chip/error_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_i2c_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_pwr_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_uart_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/acmp/acmp_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/adc/adc_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/crc/crc_8xx.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/dma/dma_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/gpio/gpio_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\../../peri_driver/i2c/i2c_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/inmux/inmux_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/mrt/mrt_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/mrt/stopwatch.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/pinint/pinint_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\../../peri_driver/pmu/pmu_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/sctimer/sct_8xx.h)(0x56E29620)
+I (..\..\..\common\chip\../../peri_driver/sctimer/sct_pwm_8xx.h)(0x56E29620)
+I (..\..\..\common\chip\../../peri_driver/spi/spi_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/uart/uart_8xx.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/uart/ring_buffer.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/wkt/wkt_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/wwdt/wwdt_8xx.h)(0x56E2961C)
+F (..\..\..\peri_driver\uart\ring_buffer.c)(0x56E2961C)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\ring_buffer.o --omf_browse .\keil_output\ring_buffer.crf --depend .\keil_output\ring_buffer.d)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (..\..\..\peri_driver\uart\ring_buffer.h)(0x56E2961C)
+I (..\..\..\common\chip\lpc_types.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
+F (..\..\..\common\startup\keil_startup_lpc82x.s)(0x56E2960C)(--cpu Cortex-M0+ -g --apcs=interwork --pd "__MICROLIB SETA 1"-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include--list .\keil_output\keil_startup_lpc82x.lst --xref -o .\keil_output\keil_startup_lpc82x.o --depend .\keil_output\keil_startup_lpc82x.d)
+F (..\..\..\common\chip\sysinit_8xx.c)(0x56E2960E)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\sysinit_8xx.o --omf_browse .\keil_output\sysinit_8xx.crf --depend .\keil_output\sysinit_8xx.d)
+I (..\..\..\common\board\board.h)(0x56E2960E)
+I (..\..\..\common\chip\chip.h)(0x5707215C)
+I (..\..\..\common\chip\lpc_types.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
+I (..\..\..\common\chip\cmsis.h)(0x56E2960E)
+I (..\..\..\common\CMSIS\core_cm0plus.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmInstr.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\cmsis_armcc.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmFunc.h)(0x56E2960C)
+I (..\..\..\common\chip\syscon_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\clock_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\fmc_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\ioswm_8xx.h)(0x56E2960E)
+I (..\..\..\common\board\board_api.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+F (..\..\..\common\board\board.c)(0x5707215C)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\board.o --omf_browse .\keil_output\board.crf --depend .\keil_output\board.d)
+I (..\..\..\common\board\board.h)(0x56E2960E)
+I (..\..\..\common\chip\chip.h)(0x5707215C)
+I (..\..\..\common\chip\lpc_types.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
+I (..\..\..\common\chip\cmsis.h)(0x56E2960E)
+I (..\..\..\common\CMSIS\core_cm0plus.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmInstr.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\cmsis_armcc.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmFunc.h)(0x56E2960C)
+I (..\..\..\common\chip\syscon_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\clock_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\fmc_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\ioswm_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\../../peri_driver/peri_driver.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/rom/romapi_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/../iap/iap.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/rom/../../common/chip/error_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_i2c_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_pwr_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/rom/rom_uart_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/acmp/acmp_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/adc/adc_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/crc/crc_8xx.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/dma/dma_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/gpio/gpio_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\../../peri_driver/i2c/i2c_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/inmux/inmux_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/mrt/mrt_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/mrt/stopwatch.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/pinint/pinint_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\../../peri_driver/pmu/pmu_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/sctimer/sct_8xx.h)(0x56E29620)
+I (..\..\..\common\chip\../../peri_driver/sctimer/sct_pwm_8xx.h)(0x56E29620)
+I (..\..\..\common\chip\../../peri_driver/spi/spi_8xx.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/uart/uart_8xx.h)(0x56E2961A)
+I (..\..\..\common\chip\../../peri_driver/uart/ring_buffer.h)(0x56E2961C)
+I (..\..\..\common\chip\../../peri_driver/wkt/wkt_8xx.h)(0x56E2961E)
+I (..\..\..\common\chip\../../peri_driver/wwdt/wwdt_8xx.h)(0x56E2961C)
+I (..\..\..\common\board\board_api.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (E:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (..\..\..\common\board\retarget.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\rt_misc.h)(0x53463A44)
+F (..\..\..\common\chip\ioswm_8xx.c)(0x56E2960E)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\ioswm_8xx.o --omf_browse .\keil_output\ioswm_8xx.crf --depend .\keil_output\ioswm_8xx.d)
+I (..\..\..\common\chip\chip.h)(0x5707215C)
+I (..\..\..\common\chip\lpc_types.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
+I (..\..\..\common\chip\cmsis.h)(0x56E2960E)
+I (..\..\..\common\CMSIS\core_cm0plus.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmInstr.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\cmsis_armcc.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmFunc.h)(0x56E2960C)
+I (..\..\..\common\chip\syscon_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\clock_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\fmc_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\ioswm_8xx.h)(0x56E2960E)
+F (..\..\..\common\chip\clock_8xx.c)(0x56E2960E)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\clock_8xx.o --omf_browse .\keil_output\clock_8xx.crf --depend .\keil_output\clock_8xx.d)
+I (..\..\..\common\chip\chip.h)(0x5707215C)
+I (..\..\..\common\chip\lpc_types.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
+I (..\..\..\common\chip\cmsis.h)(0x56E2960E)
+I (..\..\..\common\CMSIS\core_cm0plus.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmInstr.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\cmsis_armcc.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmFunc.h)(0x56E2960C)
+I (..\..\..\common\chip\syscon_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\clock_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\fmc_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\ioswm_8xx.h)(0x56E2960E)
+F (..\..\..\common\chip\syscon_8xx.c)(0x56E2960E)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\syscon_8xx.o --omf_browse .\keil_output\syscon_8xx.crf --depend .\keil_output\syscon_8xx.d)
+I (..\..\..\common\chip\chip.h)(0x5707215C)
+I (..\..\..\common\chip\lpc_types.h)(0x56E2960E)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)
+I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
+I (..\..\..\common\chip\cmsis.h)(0x56E2960E)
+I (..\..\..\common\CMSIS\core_cm0plus.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmInstr.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\cmsis_armcc.h)(0x56E2960C)
+I (..\..\..\common\CMSIS\core_cmFunc.h)(0x56E2960C)
+I (..\..\..\common\chip\syscon_8xx.h)(0x5707215C)
+I (..\..\..\common\chip\clock_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\fmc_8xx.h)(0x56E2960E)
+I (..\..\..\common\chip\ioswm_8xx.h)(0x56E2960E)
+F (..\..\..\peri_driver\acmp\acmp_8xx.h)(0x56E2961C)()
+F (..\..\..\peri_driver\adc\adc_8xx.h)(0x56E2961C)()
+F (..\..\..\peri_driver\crc\crc_8xx.h)(0x56E2961A)()
+F (..\..\..\peri_driver\dma\dma_8xx.h)(0x56E2961E)()
+F (..\..\..\peri_driver\gpio\gpio_8xx.h)(0x5707215C)()
+F (..\..\..\peri_driver\i2c\i2c_8xx.h)(0x56E2961C)()
+F (..\..\..\peri_driver\iap\iap.h)(0x56E2961A)()
+F (..\..\..\peri_driver\inmux\inmux_8xx.h)(0x56E2961E)()
+F (..\..\..\peri_driver\mrt\mrt_8xx.h)(0x56E2961E)()
+F (..\..\..\peri_driver\pinint\pinint_8xx.h)(0x5707215C)()
+F (..\..\..\peri_driver\pmu\pmu_8xx.h)(0x56E2961E)()
+F (..\..\..\peri_driver\rom\rom_i2c_8xx.h)(0x56E2961C)()
+F (..\..\..\peri_driver\rom\rom_pwr_8xx.h)(0x56E2961C)()
+F (..\..\..\peri_driver\rom\rom_uart_8xx.h)(0x56E2961C)()
+F (..\..\..\peri_driver\rom\romapi_8xx.h)(0x56E2961C)()
+F (..\..\..\peri_driver\sctimer\sct_8xx.h)(0x56E29620)()
+F (..\..\..\peri_driver\sctimer\sct_pwm_8xx.h)(0x56E29620)()
+F (..\..\..\peri_driver\spi\spi_8xx.h)(0x56E2961C)()
+F (..\..\..\peri_driver\uart\uart_8xx.h)(0x56E2961A)()
+F (..\..\..\peri_driver\uart\ring_buffer.h)(0x56E2961C)()
+F (..\..\..\peri_driver\wkt\wkt_8xx.h)(0x56E2961E)()
+F (..\..\..\peri_driver\wwdt\wwdt_8xx.h)(0x56E2961C)()
+F (..\..\..\common\chip\chip.h)(0x5707215C)()
+F (..\..\..\common\chip\clock_8xx.h)(0x56E2960E)()
+F (..\..\..\common\chip\cmsis.h)(0x56E2960E)()
+F (..\..\..\common\chip\error_8xx.h)(0x56E2960E)()
+F (..\..\..\common\chip\ioswm_8xx.h)(0x56E2960E)()
+F (..\..\..\common\chip\lpc_types.h)(0x56E2960E)()
+F (..\..\..\common\chip\syscon_8xx.h)(0x5707215C)()
+F (..\..\..\peri_driver\peri_driver.h)(0x56E2961E)()
+F (..\..\..\os\seuos.c)(0x57413221)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\seuos.o --omf_browse .\keil_output\seuos.crf --depend .\keil_output\seuos.d)
+I (..\..\..\os\seuos.h)(0x574131FF)
+I (..\..\..\os\os_def.h)(0x57412955)
+I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
+F (..\..\..\os\s.asm)(0x574132A9)(--cpu Cortex-M0+ -g --apcs=interwork --pd "__MICROLIB SETA 1"-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include--list .\keil_output\s.lst --xref -o .\keil_output\s.o --depend .\keil_output\s.d)
