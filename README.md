@@ -88,5 +88,13 @@ OSStartHighRdy
 ```
 其中，OSStartHighRdy可以申明它的原型为 void OSStartHighRdy(void)。具体代码可见step1分支。
 
+### Step1.上下文切换（Context Switch）
+
+有了上面的成果，实际上这个系统中已经运行起来了一个任务，只不过这个任务一直强占CPU资源，还没有一种机制让这个任务在不想使用CPU的时候让出使用权，所以下面我们要做的事情就是如果让任务让出使用权，从而使其它任务开始运行。
+上下文切换，实际含义是任务切换，或者说CPU寄存器内容的切换，当多任务内核决定运行其它任务时，它保存正在运行任务的当前状态，也即CPU寄存器全部内容，这些内容被保存在当前任务的栈区，入栈完后，就把下一个将要运行的任务的当前状况从栈区重新加载到CPU中，并开始下一个任务的运行，这个过程就叫做任务切换。
+
+
+
+
 操作系统开发笔记：
 [https://ljqhack1.gitbooks.io/operate_system_note/content/index.html](https://ljqhack1.gitbooks.io/operate_system_note/content/index.html)
