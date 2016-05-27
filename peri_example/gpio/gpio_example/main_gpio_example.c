@@ -52,6 +52,7 @@
 void (*myfun)(void);
 OS_STK_t TaskStack[100];
 OS_STK_t TaskStack1[100];
+OS_STK_t TaskStack2[100];
 /*****************************************************************************
  * Private functions
  ****************************************************************************/
@@ -72,9 +73,8 @@ void task0()
 	while(1)
 	{
 		i++;
-		Board_UARTPutSTR("task0\n");
-		delay(500);
-		//OSTimeDly(10);
+		Board_UARTPutSTR("task0\r\n");
+		OSTimeDly(5000);
 	}
 }
 
@@ -84,9 +84,19 @@ void task1()
 	while(1)
 	{
 		i++;
-		Board_UARTPutSTR("task1\n");
-		delay(1000);
-		OSTimeDly(10);
+		Board_UARTPutSTR("task1\r\n");
+		OSTimeDly(800);
+	}
+}
+
+void task2()
+{
+	uint8_t i = 0;
+	while(1)
+	{
+		i++;
+		Board_UARTPutSTR("task2\r\n");
+		OSTimeDly(2000);
 	}
 }
 /*****************************************************************************
@@ -147,11 +157,12 @@ int main(void) {
 	OSInit();
 	OSTaskCreate(task0, &TaskStack[99], 1);
 	OSTaskCreate(task1, &TaskStack1[99], 2);
+	OSTaskCreate(task2, &TaskStack2[99], 3);
 	OSStartTask();
 	
 
 	/* All work happens in the systick interrupt handler */
 	while (1) {
-	//	__WFI();
+		__WFI();
 	}
 }

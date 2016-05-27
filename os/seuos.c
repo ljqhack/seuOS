@@ -8,6 +8,8 @@ TCB_t *OSCurrentTCB;
 TCB_t *OSPrioHighTCB;
 BOOLEAN OSRunning;			//OS runing flag
 
+volatile  INT32U  OSTime;
+
 TCB_t OSTCB[32];
 
 OS_STK_t StackIDLE[50];
@@ -18,6 +20,7 @@ static void TaskIdle()
 	while(1)
 	{
 		i++;
+		//__wfi();
 	}
 }
 
@@ -79,6 +82,7 @@ void OSStartTask(void)
 		OSPrioHighTCB = OSTCB + OSPrioHighRdy;
 		OSCurrentTCB = OSPrioHighTCB;
 		OSCPUSystickInit();
+		OSRunning = true;
 		OSStartHighRdy();
 	}
 }
@@ -100,10 +104,41 @@ void OS_Sched(void)
 
 void OSTimeTick()
 {
-	
+	INT8U i = 0;
+	OSTime++;
+	if (OSRunning == true) 
+	{
+		while(i < 32)
+		{
+			if(OSTCB[i].OSWaitTick)
+			{
+				if(--OSTCB[i].OSWaitTick == 0)
+				{
+					OSRdyTbl |= (0x00000001L)<<i;
+				}
+			}
+		i++;
+		}
+	}
 }
-
+void  OSIntExit(void)
+{
+	if(OSRunning == true)
+	{
+		OSPrioHighRdy = 0;
+		while( !(OSRdyTbl & ((0x00000001L)<<OSPrioHighRdy)) )
+		{
+			OSPrioHighRdy++;
+		}
+		if(OSPrioHighRdy != OSTaskRunningPrio)
+		{
+			OSPrioHighTCB = OSTCB + OSPrioHighRdy;
+			OSCtxSw();
+		}
+	}
+}
 void SysTick_Handler(void)
 {
 	OSTimeTick();
+	OSIntExit();
 }
