@@ -88,5 +88,73 @@ OSStartHighRdy
 ```
 其中，OSStartHighRdy可以申明它的原型为 void OSStartHighRdy(void)。具体代码可见step1分支。
 
+### Step2.上下文切换（Context Switch）
+
+有了上面的成果，实际上这个系统中已经运行起来了一个任务，只不过这个任务一直强占CPU资源，还没有一种机制让这个任务在不想使用CPU的时候让出使用权，所以下面我们要做的事情就是如果让任务让出使用权，从而使其它任务开始运行。
+上下文切换，实际含义是任务切换，或者说CPU寄存器内容的切换，当多任务内核决定运行其它任务时，它保存正在运行任务的当前状态，也即CPU寄存器全部内容，这些内容被保存在当前任务的栈区，入栈完后，就把下一个将要运行的任务的当前状况从栈区重新加载到CPU中，并开始下一个任务的运行，这个过程就叫做任务切换。
+
+对于Cortex-M内核而言，硬件中断异常系统引入了PendSV中断，即可悬挂中断，不同于普通的软件中断，它可以被“缓期执行”，直到其它重要的任务完了后才执行。
+PendSV典型的使用场合就是上下文切换（不同任务间切换）。例如，一个系统中有两个就绪任务，上下文切换被触发的场合可以是：
+* 执行一个系统调用
+* 系统滴答定时器（SYSTICK）中断（轮转调度需要）
+
+PendSV中断处理函数中需要做些什么事情呢？下面的就是pendsv中的处理流程：
+```
+OS_CPU_PendSVHandler:
+if (PSP != NULL) { (1)
+Save R4-R11 onto task stack; (2)
+OSTCBCur->OSTCBStkPtr = SP; (3)
+}
+OSTaskSwHook(); (4)
+OSPrioCur = OSPrioHighRdy; (5)
+OSTCBCur = OSTCBHighRdy; (6)
+PSP = OSTCBHighRdy->OSTCBStkPtr; (7)
+Restore R4-R11 from new task stack; (8)
+Return from exception; (9)
+```
+参考该过程，可以写出CM0+中对应代码如下：
+```
+PendSV_Handler  PROC
+  EXPORT PendSV_Handler
+  MRS R0, psp
+  LDR R3, =OSCurrentTCB
+  LDR R2, [R3]
+  SUBS R0, R0, #32
+  STR R0, [R2]                 ;save psp to tcb
+  STMIA R0!, {R4-R7}
+  MOV R4, R8
+  MOV R5, R9
+  MOV R6, R10
+  MOV R7, R11
+  STMIA R0!, {R4-R7}
+  
+  LDR R0, =OSPrioHighRdy
+  LDR R1, =OSTaskRunningPrio
+  LDRB R2, [R0]
+  STRB R2, [R1]                ;OSTaskRunningPrio=OSPrioHighRdy
+	
+  LDR R0, =OSPrioHighTCB
+  LDR R1, =OSCurrentTCB
+  LDR R2, [R0]
+  STR R2, [R1]                ;OSCurrentTCB=OSPrioHighTCB
+	
+  LDR R0,[R2]                  ;R0 is sp
+  ADDS R0, R0, #16
+  LDMIA R0!, {R4-R7}
+  MOV R8, R4
+  MOV R9, R5
+  MOV R10, R6
+  MOV R11, R7
+
+  MSR PSP, R0
+	
+  SUBS R0, #32
+  LDMIA R0!, {R4-R7}
+	
+  BX LR
+  ENDP
+```
+
+
 操作系统开发笔记：
 [https://ljqhack1.gitbooks.io/operate_system_note/content/index.html](https://ljqhack1.gitbooks.io/operate_system_note/content/index.html)
