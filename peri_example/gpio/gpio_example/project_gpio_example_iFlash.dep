@@ -1,5 +1,5 @@
 Dependencies for Project 'project_gpio_example', Target 'iFlash': (DO NOT MODIFY !)
-F (.\main_gpio_example.c)(0x57412A8C)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\main_gpio_example.o --omf_browse .\keil_output\main_gpio_example.crf --depend .\keil_output\main_gpio_example.d)
+F (.\main_gpio_example.c)(0x57454A4A)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\main_gpio_example.o --omf_browse .\keil_output\main_gpio_example.crf --depend .\keil_output\main_gpio_example.d)
 I (..\..\..\common\board\board.h)(0x56E2960E)
 I (..\..\..\common\chip\chip.h)(0x5707215C)
 I (..\..\..\common\chip\lpc_types.h)(0x56E2960E)
@@ -41,8 +41,8 @@ I (..\..\..\common\chip\../../peri_driver/wkt/wkt_8xx.h)(0x56E2961E)
 I (..\..\..\common\chip\../../peri_driver/wwdt/wwdt_8xx.h)(0x56E2961C)
 I (..\..\..\common\board\board_api.h)(0x56E2960E)
 I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
-I (..\..\..\os\seuos.h)(0x574131FF)
-I (..\..\..\os\os_def.h)(0x57412955)
+I (..\..\..\os\seuos.h)(0x5743E5AE)
+I (..\..\..\os\os_def.h)(0x57412956)
 F (..\..\..\peri_driver\gpio\gpio_8xx.c)(0x5707215C)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\gpio_8xx.o --omf_browse .\keil_output\gpio_8xx.crf --depend .\keil_output\gpio_8xx.d)
 I (..\..\..\common\chip\chip.h)(0x5707215C)
 I (..\..\..\common\chip\lpc_types.h)(0x56E2960E)
@@ -262,8 +262,8 @@ F (..\..\..\common\chip\ioswm_8xx.h)(0x56E2960E)()
 F (..\..\..\common\chip\lpc_types.h)(0x56E2960E)()
 F (..\..\..\common\chip\syscon_8xx.h)(0x5707215C)()
 F (..\..\..\peri_driver\peri_driver.h)(0x56E2961E)()
-F (..\..\..\os\seuos.c)(0x57413221)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\seuos.o --omf_browse .\keil_output\seuos.crf --depend .\keil_output\seuos.d)
-I (..\..\..\os\seuos.h)(0x574131FF)
-I (..\..\..\os\os_def.h)(0x57412955)
+F (..\..\..\os\seuos.c)(0x5744068C)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\seuos.o --omf_browse .\keil_output\seuos.crf --depend .\keil_output\seuos.d)
+I (..\..\..\os\seuos.h)(0x5743E5AE)
+I (..\..\..\os\os_def.h)(0x57412956)
 I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
-F (..\..\..\os\s.asm)(0x574132A9)(--cpu Cortex-M0+ -g --apcs=interwork --pd "__MICROLIB SETA 1"-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include--list .\keil_output\s.lst --xref -o .\keil_output\s.o --depend .\keil_output\s.d)
+F (..\..\..\os\s.asm)(0x5746C8E4)(--cpu Cortex-M0+ -g --apcs=interwork --pd "__MICROLIB SETA 1"-I E:\Keil_v5\ARM\RV31\INC-I E:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I E:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include--list .\keil_output\s.lst --xref -o .\keil_output\s.o --depend .\keil_output\s.d)
