@@ -13,6 +13,6 @@ extern void OS_Sched(void);
 /****declare assembler function prototype****/
 //extern void OSCtxSw(void);
 extern void OSStartHighRdy(void);
-
+extern void OSCtxSw(void);
 #endif
 
