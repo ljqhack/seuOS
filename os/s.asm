@@ -35,8 +35,6 @@ OSCtxSw  PROC
 
 PendSV_Handler  PROC
 	EXPORT PendSV_Handler
-	;MOV R0, R0
-	;BX LR
 	MRS R0, psp
 	LDR R3, =OSCurrentTCB
 	LDR R2, [R3]
@@ -73,11 +71,5 @@ PendSV_Handler  PROC
 	LDMIA R0!, {R4-R7}
 	
 	BX LR
-	
-	;MOVS R0, #2
-	;MSR CONTROL, R0
-	;POP {R0-R5}
-	;MOV LR, R5
-	;POP {pc}
 	ENDP
 	end

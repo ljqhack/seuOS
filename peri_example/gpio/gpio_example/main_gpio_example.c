@@ -55,28 +55,6 @@ OS_STK_t TaskStack1[100];
 /*****************************************************************************
  * Private functions
  ****************************************************************************/
- /*
-void RunFun(void (*fun)(void), uint32_t *stack)
-{
-	--stack;
-	*stack = 0x01000000;
-	--stack;
-	*stack = (uint32_t) fun;
-	--stack;
-	*stack = 0x00000000;
-	stack -= 5;
-	*stack = 0x00000000;
-	stack -= 8;
-	
-	__asm volatile(
-	" ldr r2, stack \n"
-	" add r2, #32   \n"
-	" msr psp, r2   \n"
-	" pop {pc}      \n"
-	);
-	
-}
-*/
 
 void delay(uint32_t i)
 {
@@ -96,7 +74,7 @@ void task0()
 		i++;
 		Board_UARTPutSTR("task0\n");
 		delay(500);
-		OSTimeDly(10);
+		//OSTimeDly(10);
 	}
 }
 
@@ -108,6 +86,7 @@ void task1()
 		i++;
 		Board_UARTPutSTR("task1\n");
 		delay(1000);
+		OSTimeDly(10);
 	}
 }
 /*****************************************************************************
@@ -118,7 +97,8 @@ void task1()
  * @brief	Handle interrupt from SysTick timer
  * @return	Nothing
  */
-void SysTick_Handler(void)
+
+void SysTick_Handlerxxx(void)
 {
 	static uint8_t count = 0;
 
@@ -157,7 +137,7 @@ int main(void) {
 	Chip_GPIO_PortSetMask(LPC_GPIO_PORT, 0, ~PORT_MASK);
 
 	/* Enable SysTick Timer */
-	SysTick_Config(SystemCoreClock / TICKRATE_HZ);
+	//SysTick_Config(SystemCoreClock / TICKRATE_HZ);
 
 
 	Board_UARTPutSTR("START DEBUG seuos\r\n");

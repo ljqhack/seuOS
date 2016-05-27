@@ -10,9 +10,27 @@ BOOLEAN OSRunning;			//OS runing flag
 
 TCB_t OSTCB[32];
 
+OS_STK_t StackIDLE[50];
+
+static void TaskIdle()
+{
+	INT32U i;
+	while(1)
+	{
+		i++;
+	}
+}
+
+void OSCPUSystickInit( void )
+{
+	*(SYSTICK_LOAD) = ( configCPU_CLOCK_HZ / configTICK_RATE_HZ ) - 1UL;
+	*(SYSTICK_CTRL) = portNVIC_SYSTICK_CLK | portNVIC_SYSTICK_INT | portNVIC_SYSTICK_ENABLE;
+}
+
 void OSInit(void)
 {
     OSRunning = false;
+		OSTaskCreate(TaskIdle, &StackIDLE[49], 31);					//Init Idle Task
 }
 
 void OSTimeDly(INT32U ticks)
@@ -60,6 +78,7 @@ void OSStartTask(void)
 		OSTaskRunningPrio = OSPrioHighRdy;
 		OSPrioHighTCB = OSTCB + OSPrioHighRdy;
 		OSCurrentTCB = OSPrioHighTCB;
+		OSCPUSystickInit();
 		OSStartHighRdy();
 	}
 }
@@ -79,3 +98,12 @@ void OS_Sched(void)
 	}
 }
 
+void OSTimeTick()
+{
+	
+}
+
+void SysTick_Handler(void)
+{
+	OSTimeTick();
+}
