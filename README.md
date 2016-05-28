@@ -2,11 +2,16 @@ Copyright (c) 2016 ljqhack@Southeast University
 
 ## Welcome to seuOS
 
-本项目基于 sep6210(cortex-m3)开发的一款嵌入式调度内核，实现如下功能：
+本项目希望开发的一款嵌入式调度内核，实现如下功能：
 * 任务管理
 * 时间管理
-* 信息量管理
+* 信息量、消息队列管理
 * 内存管理
+
+开发过程中的代码是在LPC82x系列MCU上进行测试,LPC82x是Cortex-M0+的内核，下文中讲述的一些内容可能讲的是Cortex-M3，但实现的代码却是Cortex-M0+的代码，不必惊讶，望各位注意这个问题，因为基本思想都大同小异，有不同之处可以自行到ARM官网查阅相关文档。以下文字及代码大多本人一点一点码起来，部份也会参考相关文档内容，由于水平有限，难免会有一些错误，希望各位批评指教！
+* 操作系统开发笔记：
+[https://ljqhack1.gitbooks.io/operate_system_note/content/index.html](https://ljqhack1.gitbooks.io/operate_system_note/content/index.html)
+
 
 ### Step1.在一个全新的堆栈中运行函数
 
@@ -27,7 +32,7 @@ Copyright (c) 2016 ljqhack@Southeast University
 * PC：在取向量完成后，PC将指向服务例程的入口地址；
 * LR：在出入ISR的时候，LR的值将得到重新的诠释，这种特殊的值称为“EXC_RETURN”，在异常进入时由系统计算并赋给LR，并在异常返回时使用它。
 
-有了以上基础后，这样可以写一个函数，创建人工堆栈，模拟一个中断过程，代码如下：
+有了以上基础后，这样可以写一个函数，创建人工堆栈，模拟一个中断过程（Cortex-M0+），代码如下：
 
 ```
 void OSTaskCreate(void(*task)(void), OS_STK_t *top, INT8U prio)
@@ -154,7 +159,11 @@ PendSV_Handler  PROC
   BX LR
   ENDP
 ```
+上面的代码可以完成任务运行过程中所需要的上下文切换，OSPrioHighRdy和OSPrioHighTCB可以看成两个PendSV的函数，这两个参数在调试器中计算完成，并在调度器中调用PendSV触发函数以完成上下文切换。
+
+另外，step2中写了一个延时管理函数OSTimeDly,该函数只是简单的使任务进入非就绪态，然后进行调度。但是到目前为止，任务还不能自由来回切换，step2中的代码运行后，只能从task0被调度到task1，但是还不能重新回到task0运行，这个的实现请看step3。
 
 
-操作系统开发笔记：
-[https://ljqhack1.gitbooks.io/operate_system_note/content/index.html](https://ljqhack1.gitbooks.io/operate_system_note/content/index.html)
+### Step3.系统的心脏（滴嗒定时器SysTick）
+
+
