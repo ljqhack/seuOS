@@ -8,9 +8,26 @@ Copyright (c) 2016 ljqhack@Southeast University
 * 信息量、消息队列管理
 * 内存管理
 
+为了能较直观的展现，本项目前面几个step在代码组织上没有过多考虑可移值性等一些问题，后面会慢慢整理为比较规范的代码。
 开发过程中的代码是在LPC82x系列MCU上进行测试,LPC82x是Cortex-M0+的内核，下文中讲述的一些内容可能讲的是Cortex-M3，但实现的代码却是Cortex-M0+的代码，不必惊讶，望各位注意这个问题，因为基本思想都大同小异，有不同之处可以自行到ARM官网查阅相关文档。以下文字及代码大多本人一点一点码起来，部份也会参考相关文档内容，由于水平有限，难免会有一些错误，希望各位批评指教！
 * 操作系统开发笔记：
 [https://ljqhack1.gitbooks.io/operate_system_note/content/index.html](https://ljqhack1.gitbooks.io/operate_system_note/content/index.html)
+
+
+### Step0.代码的组织
+
+seuOS/
+├── common/                   lpc82x的common文件
+├── os/                       本项目要写的os代码
+│     ├── seuos.c             os的核心代码
+│     ├── seuos.h             os头文件
+│     ├── s.asm               相关汇编代码
+│     └── os_def.h            相关宏定义及类型定义
+│ 
+├── peri_example/             测试代码  
+├── peri_example/             lpc82x的driver  
+├── tool                      工具
+└── README.md                 你正在看的文件 -_-" 这不用介绍了吧
 
 
 ### Step1.在一个全新的堆栈中运行函数
