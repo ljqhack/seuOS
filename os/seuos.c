@@ -14,6 +14,16 @@ TCB_t OSTCB[32];
 
 OS_STK_t StackIDLE[50];
 
+/*****************************************************************************
+ * functions prototype
+ ****************************************************************************/
+void OSCPUSystickInit( void );
+void OSTimeTick(void);
+void  OSIntExit(void);
+void OS_Sched(void);
+static void TaskIdle(void);
+
+
 static void TaskIdle()
 {
 	INT32U i;
@@ -22,12 +32,6 @@ static void TaskIdle()
 		i++;
 		//__wfi();
 	}
-}
-
-void OSCPUSystickInit( void )
-{
-	*(SYSTICK_LOAD) = ( configCPU_CLOCK_HZ / configTICK_RATE_HZ ) - 1UL;
-	*(SYSTICK_CTRL) = portNVIC_SYSTICK_CLK | portNVIC_SYSTICK_INT | portNVIC_SYSTICK_ENABLE;
 }
 
 void OSInit(void)
@@ -87,7 +91,6 @@ void OSStartTask(void)
 	}
 }
 
-
 void OS_Sched(void)
 {
 	OSPrioHighRdy = 0;
@@ -100,6 +103,13 @@ void OS_Sched(void)
 		OSPrioHighTCB = OSTCB + OSPrioHighRdy;
 		OSCtxSw();
 	}
+}
+
+/**Time manage relate**/
+void OSCPUSystickInit( void )
+{
+	*(SYSTICK_LOAD) = ( configCPU_CLOCK_HZ / configTICK_RATE_HZ ) - 1UL;
+	*(SYSTICK_CTRL) = portNVIC_SYSTICK_CLK | portNVIC_SYSTICK_INT | portNVIC_SYSTICK_ENABLE;
 }
 
 void OSTimeTick()
