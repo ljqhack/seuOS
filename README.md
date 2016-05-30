@@ -16,18 +16,18 @@ Copyright (c) 2016 ljqhack@Southeast University
 
 ### Step0.代码的组织
 
-seuOS/
-├── common/                   lpc82x的common文件
-├── os/                       本项目要写的os代码
-│     ├── seuos.c             os的核心代码
-│     ├── seuos.h             os头文件
-│     ├── s.asm               相关汇编代码
-│     └── os_def.h            相关宏定义及类型定义
-│ 
-├── peri_example/             测试代码  
-├── peri_example/             lpc82x的driver  
-├── tool                      工具
-└── README.md                 你正在看的文件 -_-" 这不用介绍了吧
+* seuOS/
+* ├── common/                   lpc82x的common文件
+* ├── os/                       本项目要写的os代码
+* │     ├── seuos.c             os的核心代码
+* │     ├── seuos.h             os头文件
+* │     ├── s.asm               相关汇编代码
+* │     └── os_def.h            相关宏定义及类型定义
+* │ 
+* ├── peri_example/             测试代码  
+* ├── peri_example/             lpc82x的driver  
+* ├── tool                      工具
+* └── README.md                 你正在看的文件 -_-" 这不用介绍了吧
 
 
 ### Step1.在一个全新的堆栈中运行函数
