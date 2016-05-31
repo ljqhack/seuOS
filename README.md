@@ -181,6 +181,35 @@ PendSV_Handler  PROC
 另外，step2中写了一个延时管理函数OSTimeDly,该函数只是简单的使任务进入非就绪态，然后进行调度。但是到目前为止，任务还不能自由来回切换，step2中的代码运行后，只能从task0被调度到task1，但是还不能重新回到task0运行，这个的实现请看step3。
 
 
-### Step3.系统的心脏（滴嗒定时器SysTick）
+### Step3.系统的心脏（时钟节拍）
 
+下面这一节来完善OSTimeDly的相关功能，完成这一节后，我们写的这个os将能够运转起来。
+
+时钟节拍（clock tick）是指特定的周期性中断。这个中断可以看做是系统心脏的脉动。中断之前的时间间隔取决于不同的应用，一般为10-200ms。时钟节拍使得内核可以将任务延时若十个整数时钟节拍，以及当任务等待事件发生时，提供等待超时的依据。时钟节拍越快，系统的额外开销就越大。
+
+首先要配置一下MCU的Systick定时器(1ms)：
+```
+void OSCPUSystickInit( void )
+{
+	*(SYSTICK_LOAD) = ( configCPU_CLOCK_HZ / configTICK_RATE_HZ ) - 1UL;
+	*(SYSTICK_CTRL) = portNVIC_SYSTICK_CLK | portNVIC_SYSTICK_INT | portNVIC_SYSTICK_ENABLE;
+}
+```
+
+紧接着，系统每隔1ms进入一次中断，在中断里面需要完成如下一事情：
+* 遍历任务控制块（OSTCB），将OSWaitTick不为0的控制块都减1
+* 如果发现某个OSTCB的OSWaitTick刚好减到0,则将该任务置为就绪态
+* 退出中断前，计算就绪表中最高优先级
+* 如果当前最高优先级不等于当前运行的优先级，就进行一次调度（触发一次PendSV）
+
+SysTick_Handler的相当代码如下,具体实现请查看step3的相关代码：
+```
+void SysTick_Handler(void)
+{
+	OSTimeTick();
+	OSIntExit();
+}
+```
+
+完成上述工作后，任务就可以调度运转起来了
 

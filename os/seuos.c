@@ -40,16 +40,6 @@ void OSInit(void)
 		OSTaskCreate(TaskIdle, &StackIDLE[49], 31);					//Init Idle Task
 }
 
-void OSTimeDly(INT32U ticks)
-{
-	if(ticks > 0)
-	{
-		OSRdyTbl &= ~( (0x00000001)<<OSTaskRunningPrio );
-		OSTCB[OSTaskRunningPrio].OSWaitTick = ticks;
-		OS_Sched();
-	}
-}
-
 void OSTaskCreate(void(*task)(void), OS_STK_t *top, INT8U prio)
 {
     OS_STK_t *stk;
@@ -151,4 +141,14 @@ void SysTick_Handler(void)
 {
 	OSTimeTick();
 	OSIntExit();
+}
+
+void OSTimeDly(INT32U ticks)
+{
+	if(ticks > 0)
+	{
+		OSRdyTbl &= ~( (0x00000001)<<OSTaskRunningPrio );
+		OSTCB[OSTaskRunningPrio].OSWaitTick = ticks;
+		OS_Sched();
+	}
 }

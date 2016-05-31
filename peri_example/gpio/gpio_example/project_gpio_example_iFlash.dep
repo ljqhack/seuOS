@@ -262,7 +262,7 @@ F (..\..\..\common\chip\ioswm_8xx.h)(0x574BF244)()
 F (..\..\..\common\chip\lpc_types.h)(0x574BF244)()
 F (..\..\..\common\chip\syscon_8xx.h)(0x574BF244)()
 F (..\..\..\peri_driver\peri_driver.h)(0x574BF244)()
-F (..\..\..\os\seuos.c)(0x574C00B2)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\seuos.o --omf_browse .\keil_output\seuos.crf --depend .\keil_output\seuos.d)
+F (..\..\..\os\seuos.c)(0x574D3E4D)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\..\common\CMSIS -I..\..\..\common\chip -I..\..\..\common\board -I..\..\..\peri_driver -I..\..\..\os-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\LPC800_DFP\1.1.0\Device\Include-DLPC824M201JHI33 -DCORE_M0PLUS-o .\keil_output\seuos.o --omf_browse .\keil_output\seuos.crf --depend .\keil_output\seuos.d)
 I (..\..\..\os\seuos.h)(0x574BFF85)
 I (..\..\..\os\os_def.h)(0x574BF244)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x53463A44)
