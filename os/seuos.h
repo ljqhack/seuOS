@@ -13,6 +13,9 @@ extern INT32U SystemCoreClock;
 #define portNVIC_SYSTICK_INT		0x00000002
 #define portNVIC_SYSTICK_ENABLE		0x00000001
 
+#define DisInt()				__disable_irq()
+#define EnInt()					__enable_irq()
+
 extern void OSInit(void);
 extern void OSTimeDly(INT32U i);
 extern void OSTaskCreate(void(*task)(void), OS_STK_t *top, INT8U prio);

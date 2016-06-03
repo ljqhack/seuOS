@@ -83,14 +83,18 @@ void OSStartTask(void)
 
 void OS_Sched(void)
 {
+	DisInt();
 	OSPrioHighRdy = 0;
 	while( !(OSRdyTbl & ((0x00000001L)<<OSPrioHighRdy)) )
 	{
 		OSPrioHighRdy++;
 	}
+	EnInt();
 	if(OSPrioHighRdy != OSTaskRunningPrio)
 	{
+		DisInt();
 		OSPrioHighTCB = OSTCB + OSPrioHighRdy;
+		EnInt();
 		OSCtxSw();
 	}
 }
@@ -105,7 +109,9 @@ void OSCPUSystickInit( void )
 void OSTimeTick()
 {
 	INT8U i = 0;
+	DisInt();
 	OSTime++;
+	EnInt();
 	if (OSRunning == true) 
 	{
 		while(i < 32)
@@ -114,7 +120,9 @@ void OSTimeTick()
 			{
 				if(--OSTCB[i].OSWaitTick == 0)
 				{
+					DisInt();
 					OSRdyTbl |= (0x00000001L)<<i;
+					EnInt();
 				}
 			}
 		i++;
@@ -125,14 +133,18 @@ void  OSIntExit(void)
 {
 	if(OSRunning == true)
 	{
+		DisInt();
 		OSPrioHighRdy = 0;
 		while( !(OSRdyTbl & ((0x00000001L)<<OSPrioHighRdy)) )
 		{
 			OSPrioHighRdy++;
 		}
+		EnInt();
 		if(OSPrioHighRdy != OSTaskRunningPrio)
 		{
+			DisInt();
 			OSPrioHighTCB = OSTCB + OSPrioHighRdy;
+			EnInt();
 			OSCtxSw();
 		}
 	}
@@ -147,8 +159,10 @@ void OSTimeDly(INT32U ticks)
 {
 	if(ticks > 0)
 	{
+		DisInt();
 		OSRdyTbl &= ~( (0x00000001)<<OSTaskRunningPrio );
 		OSTCB[OSTaskRunningPrio].OSWaitTick = ticks;
+		EnInt();
 		OS_Sched();
 	}
 }
