@@ -639,6 +639,11 @@
               <FileType>2</FileType>
               <FilePath>..\..\..\os\s.asm</FilePath>
             </File>
+            <File>
+              <FileName>s_mem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\os\s_mem.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

@@ -18,6 +18,15 @@ typedef struct TCB{
     INT32U OSWaitTick;
 }TCB_t;
 
+
+typedef struct os_mem{
+		void *OSMemAddr;
+		void *OSMemFreeList;
+		INT32U OSMemBlkSize;
+		INT32U OSMemNblks;
+		INT32U OSMemNFree;
+}OSMEM_t;
+
 #define portINITIAL_XPSR			( 0x01000000 )
 
 #endif

@@ -15,7 +15,7 @@ TCB_t OSTCB[32];
 OS_STK_t StackIDLE[50];
 
 /*****************************************************************************
- * functions prototype
+ * local functions prototype
  ****************************************************************************/
 void OSCPUSystickInit( void );
 void OSTimeTick(void);
