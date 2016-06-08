@@ -20,13 +20,27 @@ typedef struct TCB{
 
 
 typedef struct os_mem{
-		void *OSMemAddr;
-		void *OSMemFreeList;
-		INT32U OSMemBlkSize;
-		INT32U OSMemNblks;
-		INT32U OSMemNFree;
+		void *MemStartAddr;
+		void *MemFreeList;
+		INT32U MemBlkSize;
+		INT32U MemN;
+		INT32U MemNFree;
 }OSMEM_t;
 
 #define portINITIAL_XPSR			( 0x01000000 )
+
+/*
+*********************************************************************************************************
+*                                             ERROR CODES
+*********************************************************************************************************
+*/
+typedef INT8U													OS_ERR_t;
+
+#define OS_ERR_NONE                   0u
+
+#define OS_ERR_MEM_INVALID_MP					1u
+#define OS_ERR_MEM_INVALID_ADDR				2u
+#define OS_ERR_MEM_INVALID_BLKS				3u
+#define OS_ERR_MEM_INVALID_SIZE				4u
 
 #endif
