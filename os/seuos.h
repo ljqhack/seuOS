@@ -24,11 +24,9 @@ extern void OSStartTask(void);
 
 /****declare memory management function prototype****************************/
 extern OS_ERR_t OSMemInit(OSMEM_t *mp, void *addr, INT8U nblks, INT8U blksize);
-extern void *OSMemAlloc(OSMEM_t mp);
-extern void OSMemFree(OSMEM_t mp, void *pblk);
+extern void *OSMemAlloc(OSMEM_t *mp);
+extern void OSMemFree(OSMEM_t *mp, void *pblk);
 /*******************end******************************************************/
-
-
 
 /****declare assembler function prototype************************************/
 //extern void OSCtxSw(void);

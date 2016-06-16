@@ -1,5 +1,9 @@
 #include "seuos.h"
 
+/**
+ * @brief	Initialize a memory block
+ * @return	if error occur, return error code
+ */
 OS_ERR_t OSMemInit(OSMEM_t *mp, void *addr, INT8U nblks, INT8U blksize)
 {
 	void **plink;
@@ -42,4 +46,45 @@ OS_ERR_t OSMemInit(OSMEM_t *mp, void *addr, INT8U nblks, INT8U blksize)
 	return OS_ERR_NONE;
 }
 
+/**
+ * @brief	Get a memory block from memory pool
+ * @return if error occur,return error code, else return pointer
+ */
+void *OSMemAlloc(OSMEM_t *mp)
+{
+	void *blk;
+	if(mp == (void *)0)
+	{
+		return (void*)0;
+	}
+	
+	if(! mp->MemNFree)
+	{
+		return (void*)0;
+	}
+	
+	blk = mp->MemFreeList;
+	mp->MemFreeList = *(void **)blk;
+	mp->MemNFree--;
+	return blk;
+}
 
+
+/**
+ * @brief	Free a memory
+ * @return None
+ */
+void OSMemFree(OSMEM_t *mp, void *pblk)
+{
+	if( (mp == (void *)0) || (pblk == (void *)0) )
+	{
+		return;
+	}
+	if(mp->MemNFree >= mp->MemN)
+	{
+		return;
+	}
+	*(void **)pblk = mp->MemFreeList;
+	mp->MemFreeList = pblk;
+	mp->MemNFree++;
+}
