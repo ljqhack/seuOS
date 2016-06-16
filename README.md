@@ -239,3 +239,8 @@ typedef struct os_mem{
 	INT32U MemNFree;
 }OSMEM_t;
 ```
+
+![内存池管理结构示意][1]
+
+
+  [1]:document/img/MemPool.JPG "MemPool.JPG"
