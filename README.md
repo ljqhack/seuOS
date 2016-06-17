@@ -240,7 +240,14 @@ typedef struct os_mem{
 }OSMEM_t;
 ```
 
+下图为内存池管理结构示意:
 ![内存池管理结构示意][1]
 
+对于内存的管理，需要实现内存池初始化、获取内存、释放内存三个主要函数，函数原型定义如下：
+```
+extern OS_ERR_t OSMemInit(OSMEM_t *mp, void *addr, INT8U nblks, INT8U blksize);
+extern void *OSMemAlloc(OSMEM_t *mp);
+extern void OSMemFree(OSMEM_t *mp, void *pblk);
+```
 
   [1]:document/img/MemPool.JPG "MemPool.JPG"
