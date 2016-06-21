@@ -21,6 +21,7 @@ Copyright (c) 2016 ljqhack@Southeast University
 * ├── os/                       本项目要写的os代码
 * │     ├── seuos.c             os的核心代码
 * │     ├── seuos.h             os头文件
+* │     ├── os_mem.c            内存管理
 * │     ├── s.asm               相关汇编代码
 * │     └── os_def.h            相关宏定义及类型定义
 * │ 
