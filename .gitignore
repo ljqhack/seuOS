@@ -1,1 +1,6 @@
 peri_example/gpio/gpio_example/keil_output/
+*.uvguix*
+*.bak
+*.dep
+
+
